@@ -24,13 +24,13 @@ public class Hooks {
         extent.attachReporter(spark);
         extent.createTest(scenario.getName().replaceAll(" ","_"));
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
-//        ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("--window-size=1920,1080");
-//        chromeOptions.addArguments("--start-maximized");
-//        chromeOptions.addArguments("--headless");
-//        chromeOptions.addArguments("--enable-javascript");
-//        driver = new ChromeDriver(chromeOptions);
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--window-size=1920,1080");
+        chromeOptions.addArguments("--start-maximized");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--enable-javascript");
+        driver = new ChromeDriver(chromeOptions);
+//        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
