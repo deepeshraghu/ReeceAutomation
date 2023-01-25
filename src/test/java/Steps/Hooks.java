@@ -26,11 +26,14 @@ public class Hooks {
         extent.createTest(scenario.getName().replaceAll(" ","_"));
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("user-agent=\"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\"");
+//        chromeOptions.addArguments("general.useragent.override",userAgent);
         chromeOptions.addArguments("--window-size=1920,1080");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--enable-javascript");
         driver = new ChromeDriver(chromeOptions);
+//        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 

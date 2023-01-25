@@ -88,6 +88,39 @@ public class BaseStep {
             System.out.println("find element method error" + ex.getMessage());
             return null;
         }
+
+    }
+
+    public void sitchToFrame(String path, Pather type){
+        try {
+            WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(TimeOut.MIDDLE.value));
+            WebElement element = null;
+            switch (type) {
+                case className:
+                    element = (WebElement) wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.className(path)));
+                    break;
+                case id:
+                    element = (WebElement) wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(path)));
+                    break;
+                case name:
+                    element = (WebElement) wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.name(path)));
+                    break;
+                case xPath:
+                    element = (WebElement) wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(path)));
+                    break;
+                case cssSelector:
+                    element = (WebElement) wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.cssSelector(path)));
+                    break;
+                case linkText:
+                    element = (WebElement) wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.linkText(path)));
+                    break;
+                default:
+                    throw new NotFoundException();
+            }
+
+        } catch (Exception ex) {
+            System.out.println("find element method error" + ex.getMessage());
+        }
     }
 
 
