@@ -123,5 +123,8 @@ public class BaseStep {
         }
     }
 
+    public void sitchToMainWindow(){
+        Hooks.driver.switchTo().defaultContent();
+    }
 
     }

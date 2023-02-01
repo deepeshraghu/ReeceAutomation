@@ -87,9 +87,9 @@ public class product_search extends BaseStep {
     }
 
     @When ("I click on ADD button")
-    public void userClickOnAddCartCTA(){
+    public void userClickOnAddCartCTA() throws InterruptedException {
+        Thread.sleep(5000);
         findElement("//div[@data-search-result-position-index='1']//add-to-cart[@class='add-to-cart-component']",Pather.xPath).click();
-
     }
 
     @When  ("I click the shop in max button for a product as a retail user")

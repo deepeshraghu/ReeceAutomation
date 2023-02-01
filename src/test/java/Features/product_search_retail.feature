@@ -3,7 +3,7 @@ Feature: As a Retail User
   I need to be able to see the pricing of a product
   from the Product Browse page
 
-  @retail
+  @test
   Scenario: Test that a retail user with postcode should be able to see
   CMP gst inc amounts for all products
 

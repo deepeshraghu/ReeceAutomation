@@ -3,7 +3,7 @@ Feature: As a anonymous or retail User
   I need to be able to see the pricing of a product
   from the Product Browse page
 
-  @chromeOptions
+  @test
   Scenario: Test that an anonymous user who access the site will see the product list displayed with CMP price only,
   Show GST checkbox checked by default, gst inc prices displayed, Show CMP Price dropdown disabled
 
