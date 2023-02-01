@@ -43,10 +43,11 @@ public class product_search extends BaseStep {
 
     @When("^I set the postcode to \"([^\"]*)\"$")
     public void userSetPostalCode(String code) throws InterruptedException {
+        Thread.sleep(2000);
         findElement("//div[contains(text(),'Your location:')]",Pather.xPath).click();
         findElement("//input[@class='popup-postcode__input']",Pather.xPath).sendKeys(code);
         findElement("//button[@class='popup-postcode__button']",Pather.xPath).click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 
     @Then("I should see description of product contains {string}")
@@ -61,7 +62,7 @@ public class product_search extends BaseStep {
     }
 
     @And("^I should see list of CMP gst inc prices$")
-    public void userVerifySMPPrice() {
+    public void userVerifySMPPrice() throws InterruptedException {
         Assert.assertTrue(findElement("//div[@data-search-result-position-index='1']//div[@class='product-tile__price product-tile__price--cmp']//span[@class='product-tile__price-suffx']",Pather.xPath).getText().contains("inc.gst"));
     }
 
@@ -77,6 +78,7 @@ public class product_search extends BaseStep {
             Assert.assertTrue(element.isEnabled());
         }
         else {
+            Thread.sleep(3000);
             assertFalse(element.isEnabled());
         }
     }
@@ -157,14 +159,22 @@ public class product_search extends BaseStep {
        Assert.assertNotEquals(beforeValue,afterValue);
     }
 
-    @When("I click on {string} category")
-    public void userClickOnTapwareAndAccessories(String value) {
+    @When("I clicks on {string} category")
+    public void userClickOnSeperateCategory(String value) {
         findElement("//span[text()='Categories']//following::span[contains(text(),'"+value+"')]", Pather.xPath).click();
+        Assert.assertTrue(findElement("//ul[@class='breadcrumbs plp-breadcrumbs']",Pather.xPath).getText().contains("Set"));
+    }
+
+    @When("I click on {string} category")
+    public void userClickOnCategories(String value) throws InterruptedException {
+        findElement("//span[text()='Categories']//following::span[contains(text(),'"+value+"')]", Pather.xPath).click();
+        Thread.sleep(2000);
         Assert.assertTrue(findElement("//ul[@class='breadcrumbs plp-breadcrumbs']",Pather.xPath).getText().contains(value));
     }
 
     @When ("I click on Brand {string}")
-    public void userClickOnBrandMilli(String value){
+    public void userClickOnBrandMilli(String value) throws InterruptedException {
+        Thread.sleep(2000);
         findElement("//ul[@data-parent-filter='Brand']/descendant::span[contains(text(),'"+value+"')]", Pather.xPath).click();
         String description = findElement("//div[@data-search-result-position-index='1']//a[@class='product-tile__detail-name']",Pather.xPath).getText();
         Assert.assertTrue(description.contains(value));

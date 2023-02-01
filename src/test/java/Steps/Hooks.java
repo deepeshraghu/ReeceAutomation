@@ -12,6 +12,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.util.HashMap;
 
 public class Hooks {
 
@@ -26,12 +29,12 @@ public class Hooks {
         extent.createTest(scenario.getName().replaceAll(" ","_"));
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--window-size=1920,1080");
-        chromeOptions.addArguments("--start-maximized");
-//        chromeOptions.addArguments("--headless");
-        chromeOptions.addArguments("--enable-javascript");
+        chromeOptions.addArguments("--disable-gpu", "--start-maximized", "--enable-javascript", "--window-size=1920,1200","--ignore-certificate-errors","--disable-extensions","--no-sandbox","--disable-dev-shm-usage");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        chromeOptions.merge(capabilities);
         driver = new ChromeDriver(chromeOptions);
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
     }
 
     @After(order=1) //Cucumber hook - runs for each scenario
@@ -40,7 +43,6 @@ public class Hooks {
     }
     @After(order = 2) // Cucumber After Hook with order 1
     public void takeScreenShotOnFailedScenario(Scenario scenario) {
-
         System.out.println("Taking screenshot from Cucumber After hook with order=2 if the scenario fails");
         if ((scenario.isFailed())) {
             final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);

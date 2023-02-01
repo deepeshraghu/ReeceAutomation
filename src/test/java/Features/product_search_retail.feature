@@ -22,7 +22,7 @@ Feature: As a Retail User
     Then I logout
 
   #Not testing for legacy user
-#  @retail
+#  @test123
 #  Scenario: Test that a retail user with no postcode should be forced to update its credentials before seeing the CMP
 #
 #    Given I login to my account with "9raghu8@gmail.com" and "Coke@123"

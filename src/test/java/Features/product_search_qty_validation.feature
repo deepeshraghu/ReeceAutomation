@@ -1,7 +1,6 @@
-@test
 Feature: OSOS-509 Quantity input fields on product search and product details page does not accept decimal values
 
-
+  @test
   Scenario Outline: Test that the quantity field on the product search page follow the validation rules of:
   numeric values only allows 0.01 to 30000.00 truncates decimal values to 2 does not accept negative values
   trigger on Enter, Add to Cart

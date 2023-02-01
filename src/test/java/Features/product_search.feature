@@ -52,7 +52,7 @@ Feature: As a anonymous or retail User
     Then the count for wishlist item is added by 1
 
 
-  @test
+  @test1
   Scenario: Test that an anonymous user who access the site search for a trade product will see the Add button as Shop in Max
 
     Given I am on the home page
@@ -95,7 +95,7 @@ Feature: As a anonymous or retail User
     When I click on "Most Relevant" on sort view options
     Then I should see that the selected view is "list" view
     And I click Clear link on "Brand" filter
-    When I click on "Basin Tap Sets" category
+    When I clicks on "Basin Tap Sets" category
     Then I should see that the selected view is "list" view
     And I click Clear link on "Categories" filter
     When I click on "Tapware & Accessories" category

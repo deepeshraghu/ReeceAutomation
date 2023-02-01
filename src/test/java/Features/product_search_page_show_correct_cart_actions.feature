@@ -30,7 +30,7 @@ Feature: Show Correct Cart Actions on search result page based on product visibi
       | 1400200 | Trade Accounts only |
       | 2217565 | In-Store            |
 
-  @test
+  @test1
   Scenario Outline: Show Correct Cart Actions on PLP for Anonymous user / Product visible
     Given I am on the home page
     And I search for product "<product>"
@@ -96,7 +96,7 @@ Feature: Show Correct Cart Actions on search result page based on product visibi
       | 1601780                    | Shop in maX |
       | 1601777                    | Shop in maX |
 
-  @test
+  @test1
   Scenario Outline: Show Correct Cart Actions on PLP for retail / unlinked user / Product visible
     Given I login to my account with "9raghu8@gmail.com" and "Coke@123"
     And I search for product "<product>"
@@ -110,7 +110,7 @@ Feature: Show Correct Cart Actions on search result page based on product visibi
       | 9503799                    | Trade Accounts only  |
       | 1400200                    | Trade Accounts only  |
 
-  @test
+  @test1
   Scenario Outline: Show Correct Cart Actions on PLP for MAX LINKED ACCOUNT USER / Product visible
     Given I login to my account with "9raghu8@gmail.com" and "Coke@123"
     And I search for product "<product>"

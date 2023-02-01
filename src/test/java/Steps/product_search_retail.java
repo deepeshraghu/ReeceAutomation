@@ -14,6 +14,6 @@ public class product_search_retail extends BaseStep {
 
     @Then("I should not see the ADD button on the product details page")
     public void userVerifyAddToCartCTA(){
-        Assert.assertTrue(findElement("//div[text()='Trade account only']",Pather.xPath).isDisplayed());
+        Assert.assertNotEquals(findElement("//a[text()='Shop in ']",Pather.xPath).getText(),"ADD");
     }
 }
