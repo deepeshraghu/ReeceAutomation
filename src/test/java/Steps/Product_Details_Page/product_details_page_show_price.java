@@ -15,6 +15,7 @@ public class product_details_page_show_price extends BaseStep {
     public void userClickOnAddToCart() throws InterruptedException {
         Thread.sleep(2000);
         findElement("//span[text()='Add']",Pather.xPath).click();
+        Thread.sleep(2000);
     }
     @Then ("I should see the {string} product in the cart")
     public void userVerifyProductInCart(String product_Id) throws InterruptedException {
