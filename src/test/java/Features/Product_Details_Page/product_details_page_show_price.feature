@@ -9,7 +9,7 @@ Feature: Show pricing for all publicly visible products on PDP
     And I click on the "9503799" product id in the search results
     Then I should see the CMP price
     And click on Add to cart button
-    Then I should see the "950399" product in the cart
+    Then I should see the "9503799" product in the cart
 
   @test
   Scenario: Show price on PDP for Anonymous user / trade public visible product
