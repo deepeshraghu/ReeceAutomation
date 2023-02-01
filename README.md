@@ -1,2 +1,1 @@
-# ReeceAutomation
-This is a demo repo to test reporting
+[![Java CI with Maven](https://github.com/deepeshraghu/ReeceAutomation/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/deepeshraghu/ReeceAutomation/actions/workflows/maven.yml)
