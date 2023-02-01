@@ -15,6 +15,8 @@ public class product_search_retail extends BaseStep {
     @Then("I should not see the ADD button on the product details page")
     public void userVerifyAddToCartCTA() throws InterruptedException {
         Thread.sleep(2000);
-        Assert.assertNotEquals(findElement("//a[text()='Shop in ']",Pather.xPath).getText(),"ADD");
+        System.out.println(findElement("//div[text()='Trade account only']",Pather.xPath).getText());
+        Assert.assertNotEquals(findElement("//div[text()='Trade account only']",Pather.xPath).getText(),"ADD");
     }
+
 }

@@ -29,7 +29,7 @@ public class Hooks {
         extent.createTest(scenario.getName().replaceAll(" ","_"));
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless", "--start-maximized", "--enable-javascript", "--window-size=1920,1200");
+        chromeOptions.addArguments("--start-maximized", "--enable-javascript", "--window-size=1920,1200");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         chromeOptions.merge(capabilities);
